@@ -21,15 +21,13 @@ class Adminpost extends CI_Controller{
         $this->load->helper('form');
         $this->load->helper('url');
     }
-    
+
 
     public function index()
     {
         $this->load->view('admin/header');
-
-
+        $test = 10;
         $data['content'] = json_decode($this->curl->simple_get($this->API.'/content'));
-
         $this->load->view('admin/post',$data);
         $this->load->view('admin/footer');
     }
